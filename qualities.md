@@ -28,3 +28,7 @@
   * Mutation testing
     * https://pypi.python.org/pypi/MutPy/0.5.1
     * https://github.com/sixty-north/cosmic-ray
+
+
+Pylint codes and rules are available
+https://pylint.readthedocs.io/en/latest/technical_reference/features.html

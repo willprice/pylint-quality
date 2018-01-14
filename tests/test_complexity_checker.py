@@ -29,3 +29,21 @@ class TestComplexityChecker(pylint.testutils.CheckerTestCase):
                 )
         ):
             self.checker.visit_functiondef(func_node)
+
+    def test_function_with_10_statements_is_acceptable(self):
+        func_node = astroid.extract_node("""
+        def acceptableLengthMethod(self): #@
+            x = 1
+            x = 2
+            x = 3
+            x = 4
+            x = 5
+            x = 6
+            x = 7
+            x = 8
+            x = 9
+            x = 10
+        """)
+
+        with self.assertNoMessages():
+            self.checker.visit_functiondef(func_node)

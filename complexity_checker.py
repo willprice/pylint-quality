@@ -1,3 +1,4 @@
+import astroid
 from pylint.checkers import BaseChecker
 from pylint.interfaces import IAstroidChecker
 
@@ -13,4 +14,8 @@ class ComplexityChecker(BaseChecker):
         super(ComplexityChecker, self).__init__(linter)
 
     def visit_functiondef(self, node):
-        pass
+        statement_count = len([child for child in node.get_children()
+                               if isinstance(child, astroid.node_classes.Statement)])
+
+        if statement_count > 10:
+            self.add_message('function-too-complex', node=node)

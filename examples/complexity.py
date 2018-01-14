@@ -38,7 +38,7 @@ class Complexity:
 
         x = 11
 
-    def longMethodWithSplitExpression(self):
+    def acceptableMethodWithSplitExpression(self):
         x = 1
         x = 2
         x = 3

@@ -47,3 +47,22 @@ class TestComplexityChecker(pylint.testutils.CheckerTestCase):
 
         with self.assertNoMessages():
             self.checker.visit_functiondef(func_node)
+
+    def test_function_length_doesnt_count_comments(self):
+        func_node = astroid.extract_node("""
+        def acceptableLengthMethodWithComments(self): #@
+            x = 1
+            x = 2
+            x = 3
+            x = 4
+            x = 5
+            x = 6
+            x = 7
+            x = 8
+            x = 9
+            # comments aren't included in the method LOC
+            x = 10
+        """)
+
+        with self.assertNoMessages():
+            self.checker.visit_functiondef(func_node)

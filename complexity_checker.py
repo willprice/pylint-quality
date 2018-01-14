@@ -8,7 +8,11 @@ class ComplexityChecker(BaseChecker):
 
     name = 'function-complexity'
     priority = -1
-    msgs = {}
+    msgs = {
+        'R1801': (
+            'Function is too long', 'function-too-long', 'Function has more than 10 statements in it'
+        )
+    }
 
     def __init__(self, linter=None):
         super(ComplexityChecker, self).__init__(linter)

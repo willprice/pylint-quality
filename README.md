@@ -1,4 +1,5 @@
 # Python Code quality through PyLint 
+[![Build Status](https://travis-ci.org/willprice/pylint-quality.svg?branch=master)](https://travis-ci.org/willprice/pylint-quality)
 
 PyLint with sane defaults
 

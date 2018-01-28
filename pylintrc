@@ -103,7 +103,7 @@ max-nested-blocks=5
 # en_AG (hunspell), en_PH (hunspell), en_ZW (hunspell), en_SG (hunspell), en_GB
 # (hunspell), en_DK (hunspell), en_GH (hunspell), en_BS (hunspell), en_NZ
 # (hunspell).
-spelling-dict=en_GB
+spelling-dict=
 
 # List of comma separated words that should not be checked.
 spelling-ignore-words=

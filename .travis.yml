@@ -1,5 +1,14 @@
+sudo: false
 language: python
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:duggan/bats'
+    packages:
+    - bats
+    - bc
 python:
   - 3.6
 script:
   - pytest
+  - ./tests/system/method-length-checker-tests.sh

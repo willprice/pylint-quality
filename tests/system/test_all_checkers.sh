@@ -24,3 +24,7 @@ run_pylint() {
 @test "Cyclomatic complexity too high" {
     run_pylint "$ROOT/examples/cyclomatic_complexity.py" too-complex
 }
+
+@test "Too many methods rule" {
+    run_pylint "$ROOT/examples/method_count_in_class.py" too-many-methods
+}

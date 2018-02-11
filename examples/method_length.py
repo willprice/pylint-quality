@@ -1,4 +1,4 @@
-class Complexity:
+class MethodLengthExamples:
     def longMethod(self):
         x = 1
         x = 2

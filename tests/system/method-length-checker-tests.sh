@@ -18,7 +18,7 @@ run_pylint() {
 }
 
 @test "Method too long rule" {
-    run_pylint "$ROOT/examples/complexity.py" method-too-long
+    run_pylint "$ROOT/examples/method_length.py" method-too-long
 }
 
 @test "Cyclomatic complexity too high" {

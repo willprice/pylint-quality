@@ -11,4 +11,6 @@ python:
   - 3.6
 script:
   - pytest
-  - ./tests/system/method-length-checker-tests.sh
+  - for system_test in ./tests/system/*.sh; do
+      bats "$system_test"
+    done

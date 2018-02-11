@@ -11,6 +11,7 @@ python:
   - 3.6
 script:
   - pytest
-  - for system_test in ./tests/system/*.sh; do
+  - |
+    for system_test in ./tests/system/*.sh; do
       bats "$system_test"
     done

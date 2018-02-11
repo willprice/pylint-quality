@@ -25,7 +25,7 @@ jobs=1
 
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
-load-plugins=pylint_complexity.checker
+load-plugins=pylint_complexity.checker,pylint.extensions.mccabe
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -37,6 +37,9 @@ persistent=yes
 # active Python interpreter and may run arbitrary code.
 unsafe-load-any-extension=no
 
+# Maximum cyclomatic complexity of code
+# see https://docs.pylint.org/en/1.8/technical_reference/extensions.html#id8 for details
+max-complexity=3
 
 [MESSAGES CONTROL]
 
@@ -54,7 +57,7 @@ disable=all
 # either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once). See also the "--disable" option for examples.
-enable=method-too-long
+enable=method-too-long,too-complex
 
 
 [REPORTS]

@@ -2,7 +2,7 @@
 
 * Complexity
   * LOC By method (e.g. max 10)
-  * Cyclometric complexity
+  * Cyclomatic complexity
     * http://radon.readthedocs.io/en/latest/index.html
   * Number of methods per class (e.g. max 10)
 * Dependencies

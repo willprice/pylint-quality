@@ -6,7 +6,21 @@ export PYTHONPATH="$ROOT"
 
 cd "$ROOT"
 
+run_pylint() {
+    local file_path="$1"; shift
+    local expected_error_message="$1"; shift
+    run pylint --rcfile="$ROOT/pylintrc" \
+        "$file_path"
+    echo $status
+    echo "$output"
+    echo "$output" | grep "$expected_error_message"
+
+}
+
 @test "Method too long rule" {
-    pylint --rcfile="$ROOT/pylintrc" \
-        "$ROOT/examples/complexity.py" | grep method-too-long
+    run_pylint "$ROOT/examples/complexity.py" method-too-long
+}
+
+@test "Cyclomatic complexity too high" {
+    run_pylint "$ROOT/examples/cyclomatic_complexity.py" too-complex
 }
